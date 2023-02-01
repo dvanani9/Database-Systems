@@ -1,0 +1,47 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 -- Used Oracle Live for this question\
+\
+CREATE TABLE candidate\
+(\
+Instructor CHAR(20),\
+subject CHAR(20)\
+);  \
+\
+INSERT INTO candidate VALUES ('Aleph', 'Scratch');        \
+INSERT INTO candidate VALUES ('Aleph', 'Java');         \
+INSERT INTO candidate VALUES ('Aleph', 'Processing');       \
+INSERT INTO candidate VALUES ('Bit', 'Python');\
+INSERT INTO candidate VALUES ('Bit', 'JavaScript');\
+INSERT INTO candidate VALUES ('Bit', 'Java');\
+INSERT INTO candidate VALUES ('CRC', 'Python');\
+INSERT INTO candidate VALUES ('CRC', 'JavaScript');\
+INSERT INTO candidate VALUES ('Dat', 'Scratch');\
+INSERT INTO candidate VALUES ('Dat', 'Python');\
+INSERT INTO candidate VALUES ('Dat', 'JavaScript');\
+INSERT INTO candidate VALUES ('Emscr', 'Scratch');\
+INSERT INTO candidate VALUES ('Emscr', 'Processing');\
+INSERT INTO candidate VALUES ('Emscr', 'JavaScript');\
+INSERT INTO candidate VALUES ('Emscr', 'Python');\
+\
+SELECT Instructor\
+FROM candidate \
+WHERE subject = 'JavaScript'\
+INTERSECT\
+SELECT Instructor\
+FROM candidate \
+WHERE subject = 'Scratch'\
+INTERSECT\
+SELECT Instructor\
+FROM candidate \
+WHERE subject = 'Python'\
+GROUP BY Instructor;\
+\
+\
+-- Took three different select statements with different where conditions and used to INTERSECT to get the common instructors \
+-- who can teach Javascript, Scratch and Python.}
